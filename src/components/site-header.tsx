@@ -26,7 +26,7 @@ export function SiteHeader() {
         </nav>
         <a
           href="#apply"
-          className="rounded-full bg-sky px-5 py-2 text-sm font-bold text-white transition-opacity hover:opacity-90"
+          className="rounded-md bg-sky px-5 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
         >
           사전신청
         </a>

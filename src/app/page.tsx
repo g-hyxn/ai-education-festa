@@ -1,7 +1,7 @@
 import { ApplySection } from "@/components/apply-section";
 import { AudienceTracks } from "@/components/audience-tracks";
+import { EventInfo } from "@/components/event-info";
 import { Hero } from "@/components/hero";
-import { QuickLinks } from "@/components/quick-links";
 import { Schedule } from "@/components/schedule";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -12,7 +12,7 @@ export default function Home() {
       <SiteHeader />
       <main>
         <Hero />
-        <QuickLinks />
+        <EventInfo />
         <AudienceTracks />
         <Schedule />
         <ApplySection />

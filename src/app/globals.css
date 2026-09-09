@@ -13,23 +13,12 @@
   --color-ink: #0b2547;
   --color-ink-2: #123a6e;
   --color-paper: #eff4fa;
-  --color-sky: #1e8fe1;
-  --color-ice: #6fc6e8;
-  --color-teal: #12b3a6;
-  --color-amber: #f5a623;
+  --color-sky: #1e6fd1;
+  --color-ice: #a9c9ec;
   --color-line: #dbe6f2;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-}
-
-.hero-gradient {
-  background: linear-gradient(
-    180deg,
-    #2f9bef 0%,
-    #1a6fd1 42%,
-    #0b2547 100%
-  );
 }

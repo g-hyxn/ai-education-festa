@@ -57,7 +57,7 @@ export function Schedule() {
 
         <div className="mt-12 grid gap-8 md:grid-cols-2">
           {DAYS.map((day) => (
-            <div key={day.date} className="overflow-hidden rounded-2xl border border-line">
+            <div key={day.date} className="overflow-hidden border border-line">
               <p className="bg-sky px-5 py-3 text-sm font-bold text-white">
                 {day.date}
               </p>
@@ -83,7 +83,7 @@ export function Schedule() {
         <h3 className="mt-20 text-lg font-bold text-ink">
           프로그램 운영 현황
         </h3>
-        <div className="mt-6 overflow-x-auto rounded-2xl border border-line">
+        <div className="mt-6 overflow-x-auto border border-line">
           <table className="w-full min-w-[560px] border-collapse text-left text-sm">
             <thead>
               <tr className="bg-sky text-white">
