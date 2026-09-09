@@ -10,8 +10,8 @@ const pretendard = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "AI 교육 페스타",
-  description: "AI 교육 페스타 디자인 페이지 프로젝트",
+  title: "AI미래교육박람회",
+  description: "2026.10.31(토)–11.1(일) 학생마당·교사마당 AI미래교육박람회",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

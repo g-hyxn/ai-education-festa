@@ -1,8 +1,23 @@
+import { ApplySection } from "@/components/apply-section";
+import { AudienceTracks } from "@/components/audience-tracks";
+import { EventInfo } from "@/components/event-info";
+import { Hero } from "@/components/hero";
+import { Schedule } from "@/components/schedule";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
+
 export default function Home() {
   return (
-    <main className="flex flex-1 flex-col items-center justify-center gap-4 px-6 text-center">
-      <h1 className="text-3xl font-bold sm:text-4xl">AI 교육 페스타</h1>
-      <p className="text-base text-foreground/70">초기 세팅 완료</p>
-    </main>
+    <>
+      <SiteHeader />
+      <main>
+        <Hero />
+        <EventInfo />
+        <AudienceTracks />
+        <Schedule />
+        <ApplySection />
+      </main>
+      <SiteFooter />
+    </>
   );
 }
