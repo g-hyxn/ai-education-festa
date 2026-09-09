@@ -2,7 +2,7 @@ const TRACKS = [
   {
     id: "students",
     tag: "학생 · 학부모",
-    accent: "bg-coral",
+    accent: "bg-sky",
     title: "학생마당",
     lead: "체험하고, 겨루고, 둘러보는 하루",
     items: [
@@ -23,7 +23,7 @@ const TRACKS = [
   {
     id: "teachers",
     tag: "교원",
-    accent: "bg-mint",
+    accent: "bg-ice",
     title: "교사마당",
     lead: "현장에 바로 쓰는 미래교육 연수",
     items: [
@@ -71,7 +71,7 @@ export function AudienceTracks() {
 
               <a
                 href="#apply"
-                className="mt-6 inline-block text-sm font-semibold text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-coral"
+                className="mt-6 inline-block text-sm font-semibold text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-sky"
               >
                 {track.tag} 사전신청 안내
               </a>

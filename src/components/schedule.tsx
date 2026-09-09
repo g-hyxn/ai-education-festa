@@ -58,7 +58,7 @@ export function Schedule() {
         <div className="mt-12 grid gap-10 md:grid-cols-2">
           {DAYS.map((day) => (
             <div key={day.date}>
-              <p className="text-sm font-semibold text-coral">{day.date}</p>
+              <p className="text-sm font-semibold text-sky">{day.date}</p>
               <ol className="mt-4 border-t border-line">
                 {day.sessions.map((session) => (
                   <li

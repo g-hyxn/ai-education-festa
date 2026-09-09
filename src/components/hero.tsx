@@ -26,7 +26,7 @@ export function Hero() {
         <div className="mt-10 flex flex-col gap-3 sm:flex-row">
           <a
             href="#apply"
-            className="rounded-sm bg-coral px-7 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+            className="rounded-sm bg-sky px-7 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
           >
             사전신청 안내 보기
           </a>
@@ -45,7 +45,7 @@ export function Hero() {
             {[...TICKER_ITEMS, ...TICKER_ITEMS].map((item, i) => (
               <span key={i} className="flex items-center gap-10 text-sm text-white/70">
                 {item}
-                <span className="h-1 w-1 rounded-full bg-coral" aria-hidden="true" />
+                <span className="h-1 w-1 rounded-full bg-sky" aria-hidden="true" />
               </span>
             ))}
           </div>

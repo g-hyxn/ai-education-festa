@@ -25,7 +25,7 @@ export function ApplySection() {
               오픈됩니다.
             </p>
           </div>
-          <span className="rounded-sm border border-coral/60 px-4 py-2 text-sm font-semibold text-coral">
+          <span className="rounded-sm border border-sky/60 px-4 py-2 text-sm font-semibold text-sky">
             2026. 10. 19.(월) – 10. 28.(수) 오픈 예정
           </span>
         </div>
@@ -55,7 +55,7 @@ export function ApplySection() {
               <div key={slot.label}>
                 <div className="h-1.5 w-full bg-white/10">
                   <div
-                    className="h-full bg-mint"
+                    className="h-full bg-ice"
                     style={{ width: `${slot.fill}%` }}
                   />
                 </div>
