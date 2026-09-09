@@ -15,6 +15,8 @@
   --color-paper: #eff4fa;
   --color-sky: #1e8fe1;
   --color-ice: #6fc6e8;
+  --color-teal: #12b3a6;
+  --color-amber: #f5a623;
   --color-line: #dbe6f2;
 }
 
@@ -23,21 +25,11 @@ body {
   color: var(--foreground);
 }
 
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.marquee-track {
-  animation: marquee 28s linear infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .marquee-track {
-    animation: none;
-  }
+.hero-gradient {
+  background: linear-gradient(
+    180deg,
+    #2f9bef 0%,
+    #1a6fd1 42%,
+    #0b2547 100%
+  );
 }

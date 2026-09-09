@@ -1,33 +1,16 @@
-"use client";
-
-import { useEffect, useState } from "react";
-
 const NAV_ITEMS = [
-  { href: "#info", label: "박람회 안내" },
   { href: "#students", label: "학생마당" },
   { href: "#teachers", label: "교사마당" },
+  { href: "#schedule", label: "일정" },
   { href: "#apply", label: "사전신청" },
   { href: "#notice", label: "알림마당" },
 ];
 
 export function SiteHeader() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled ? "bg-ink/95 backdrop-blur-sm" : "bg-transparent"
-      }`}
-    >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#top" className="text-base font-bold tracking-tight text-white">
+    <header className="sticky top-0 z-50 border-b border-line bg-white/90 backdrop-blur-sm">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3.5">
+        <a href="#top" className="text-base font-extrabold tracking-tight text-ink">
           AI미래교육박람회
         </a>
         <nav className="hidden gap-7 md:flex">
@@ -35,7 +18,7 @@ export function SiteHeader() {
             <a
               key={item.href}
               href={item.href}
-              className="text-sm text-white/75 transition-colors hover:text-white"
+              className="text-sm font-medium text-ink/65 transition-colors hover:text-ink"
             >
               {item.label}
             </a>
@@ -43,7 +26,7 @@ export function SiteHeader() {
         </nav>
         <a
           href="#apply"
-          className="rounded-sm bg-sky px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+          className="rounded-full bg-sky px-5 py-2 text-sm font-bold text-white transition-opacity hover:opacity-90"
         >
           사전신청
         </a>

@@ -25,18 +25,21 @@ export function ApplySection() {
               오픈됩니다.
             </p>
           </div>
-          <span className="rounded-sm border border-sky/60 px-4 py-2 text-sm font-semibold text-sky">
+          <span className="rounded-full bg-amber px-5 py-2 text-sm font-bold text-ink">
             2026. 10. 19.(월) – 10. 28.(수) 오픈 예정
           </span>
         </div>
 
-        <ol className="mt-12 grid gap-6 sm:grid-cols-5">
+        <ol className="mt-12 flex flex-wrap gap-3">
           {STEPS.map((step, index) => (
-            <li key={step} className="border-t border-white/20 pt-4">
-              <span className="text-sm text-white/40">
-                {String(index + 1).padStart(2, "0")}
+            <li
+              key={step}
+              className="flex items-center gap-2 rounded-full bg-white/10 py-2 pr-5 pl-2"
+            >
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-sky text-xs font-bold text-white">
+                {index + 1}
               </span>
-              <p className="mt-2 text-sm font-medium text-white">{step}</p>
+              <p className="text-sm font-medium text-white">{step}</p>
             </li>
           ))}
         </ol>
@@ -53,9 +56,9 @@ export function ApplySection() {
           <div className="mt-6 grid gap-6 sm:grid-cols-4">
             {CAPACITY.map((slot) => (
               <div key={slot.label}>
-                <div className="h-1.5 w-full bg-white/10">
+                <div className="h-2 w-full rounded-full bg-white/10">
                   <div
-                    className="h-full bg-ice"
+                    className="h-full rounded-full bg-ice"
                     style={{ width: `${slot.fill}%` }}
                   />
                 </div>
