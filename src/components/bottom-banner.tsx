@@ -2,7 +2,7 @@ import { EVENT_TAGLINE, ORG_NAME } from "@/components/org-info";
 
 export function BottomBanner() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#1c4fb0] via-sky to-teal py-20 text-white">
+    <section className="bg-sky-2 py-20 text-white">
       <div className="mx-auto max-w-6xl px-6">
         <h2 className="text-2xl font-bold sm:text-3xl">{EVENT_TAGLINE}</h2>
         <p className="mt-3 text-base text-white/85">

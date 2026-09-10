@@ -23,7 +23,7 @@ export default function InfoPage() {
         <SectionSidebar items={INFO_NAV} current="행사 개요" />
 
         <div className="mt-8 md:mt-0">
-          <p className="max-w-2xl text-base leading-relaxed text-ink/70">
+          <p className="max-w-2xl text-base leading-relaxed text-ink-2">
             AI·SW 한마당과 미래교육박람회가 하나로 모입니다. 학생마당과
             교사마당을 자유롭게 오가며 체험하고, 겨루고, 배우는 이틀을
             보내보세요.
@@ -40,7 +40,7 @@ export default function InfoPage() {
 
           <Link
             href="/info/schedule"
-            className="mt-10 flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-sky-2 to-sky px-6 py-4 text-sm font-bold text-white transition-transform hover:scale-[1.01]"
+            className="mt-10 flex items-center justify-center gap-2 rounded-md bg-sky px-6 py-4 text-sm font-bold text-white transition-colors hover:bg-sky-2"
           >
             전체 일정표 보기
             <span aria-hidden="true">›</span>

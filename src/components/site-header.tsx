@@ -81,7 +81,7 @@ export function SiteHeader() {
               </Link>
 
               <div className="invisible absolute top-full left-1/2 w-56 -translate-x-1/2 pt-3 opacity-0 transition-opacity duration-150 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
-                <ul className="rounded-xl border border-line bg-white py-2 shadow-[0_20px_45px_-20px_rgba(11,29,58,0.35)]">
+                <ul className="rounded-md border border-line bg-white py-2 shadow-md">
                   {item.children.map((child) =>
                     child.soon ? (
                       <li
@@ -109,7 +109,7 @@ export function SiteHeader() {
         </nav>
         <Link
           href="/#apply"
-          className="rounded-full bg-sky px-5 py-2 text-sm font-bold text-white transition-opacity hover:opacity-90"
+          className="rounded-md bg-sky px-5 py-2 text-sm font-bold text-white transition-colors hover:bg-sky-2"
         >
           사전등록하기
         </Link>

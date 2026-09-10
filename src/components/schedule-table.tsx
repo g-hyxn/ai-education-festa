@@ -50,18 +50,18 @@ export function ScheduleTable() {
         {SCHEDULE_DAYS.map((day) => (
           <div
             key={day.date}
-            className="overflow-hidden rounded-2xl bg-white shadow-[0_16px_40px_-24px_rgba(11,29,58,0.35)]"
+            className="overflow-hidden rounded-md border border-line bg-white"
           >
-            <p className="bg-gradient-to-r from-sky to-[#173f9e] px-6 py-4 text-sm font-bold text-white">
+            <p className="bg-sky-deep px-6 py-4 text-sm font-bold text-white">
               {day.date}
             </p>
             <ol>
               {day.sessions.map((session, i) => (
                 <li
                   key={session.time + session.title}
-                  className={`flex gap-6 px-6 py-4 ${i % 2 === 1 ? "bg-paper/70" : "bg-white"}`}
+                  className={`flex gap-6 px-6 py-4 ${i % 2 === 1 ? "bg-paper" : "bg-white"}`}
                 >
-                  <span className="w-32 shrink-0 text-sm text-ink/50">
+                  <span className="w-32 shrink-0 text-sm text-ink-2">
                     {session.time}
                   </span>
                   <span className="text-sm font-medium text-ink">
@@ -75,10 +75,10 @@ export function ScheduleTable() {
       </div>
 
       <h3 className="mt-20 text-lg font-bold text-ink">프로그램 운영 현황</h3>
-      <div className="mt-6 overflow-x-auto rounded-2xl bg-white shadow-[0_16px_40px_-24px_rgba(11,29,58,0.35)]">
+      <div className="mt-6 overflow-x-auto rounded-md border border-line bg-white">
         <table className="w-full min-w-[560px] border-collapse text-left text-sm">
           <thead>
-            <tr className="bg-gradient-to-r from-sky to-[#173f9e] text-white">
+            <tr className="bg-sky-deep text-white">
               <th className="px-6 py-4 font-bold">프로그램</th>
               <th className="px-6 py-4 font-bold">대상</th>
               <th className="px-6 py-4 font-bold">일정</th>
@@ -89,12 +89,12 @@ export function ScheduleTable() {
             {SCHEDULE_PROGRAMS.map((program, i) => (
               <tr
                 key={program.name}
-                className={`transition-colors hover:bg-[#eaf2ff] ${i % 2 === 1 ? "bg-paper/70" : "bg-white"}`}
+                className={`transition-colors hover:bg-sky-subtle ${i % 2 === 1 ? "bg-paper" : "bg-white"}`}
               >
                 <td className="px-6 py-4 font-semibold text-ink">{program.name}</td>
-                <td className="px-6 py-4 text-ink/70">{program.target}</td>
-                <td className="px-6 py-4 text-ink/70">{program.when}</td>
-                <td className="px-6 py-4 text-ink/70">{program.capacity}</td>
+                <td className="px-6 py-4 text-ink-2">{program.target}</td>
+                <td className="px-6 py-4 text-ink-2">{program.when}</td>
+                <td className="px-6 py-4 text-ink-2">{program.capacity}</td>
               </tr>
             ))}
           </tbody>

@@ -15,7 +15,7 @@ const CAPACITY = [
 
 export function ApplySection() {
   return (
-    <section id="apply" className="hero-mesh scroll-mt-20 py-24 text-white">
+    <section id="apply" className="scroll-mt-20 bg-ink-2 py-24 text-white">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
@@ -25,7 +25,7 @@ export function ApplySection() {
               오픈됩니다.
             </p>
           </div>
-          <span className="rounded-full bg-gradient-to-r from-[#e7b752] to-gold px-5 py-2 text-sm font-bold text-[#3a2705] shadow-sm">
+          <span className="rounded-sm border border-white/25 px-4 py-2 text-sm font-semibold text-white">
             2026. 10. 19.(월) – 10. 28.(수) 오픈 예정
           </span>
         </div>
@@ -34,7 +34,7 @@ export function ApplySection() {
           <div className="absolute top-5 right-[10%] left-[10%] hidden h-px bg-white/15 sm:block" />
           {STEPS.map((step, index) => (
             <li key={step} className="relative flex flex-col items-center text-center sm:items-start sm:text-left">
-              <span className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-sky-2 to-sky text-sm font-bold text-white shadow-[0_6px_16px_-4px_rgba(37,99,235,0.7)]">
+              <span className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-sky text-sm font-bold text-white">
                 {index + 1}
               </span>
               <p className="mt-3 text-sm font-medium text-white/90">{step}</p>
@@ -54,9 +54,9 @@ export function ApplySection() {
           <div className="mt-6 grid gap-6 sm:grid-cols-4">
             {CAPACITY.map((slot) => (
               <div key={slot.label}>
-                <div className="h-2 w-full overflow-hidden rounded-full bg-white/10">
+                <div className="h-1.5 w-full overflow-hidden rounded-full bg-white/10">
                   <div
-                    className="h-full rounded-full bg-gradient-to-r from-sky-2 to-teal"
+                    className="h-full rounded-full bg-sky"
                     style={{ width: `${slot.fill}%` }}
                   />
                 </div>

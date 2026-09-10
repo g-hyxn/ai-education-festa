@@ -11,14 +11,13 @@ export function PageBanner({
 }) {
   return (
     <div>
-      <div className="hero-mesh relative overflow-hidden py-14 text-center text-white">
-        <div className="hero-grid absolute inset-0" aria-hidden="true" />
-        <h1 className="relative text-3xl font-extrabold tracking-tight sm:text-4xl">
+      <div className="bg-sky-deep py-14 text-center text-white">
+        <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
           {title}
         </h1>
       </div>
       <div className="border-b border-line bg-paper">
-        <div className="mx-auto flex max-w-6xl items-center gap-2 px-6 py-3 text-sm text-ink/55">
+        <div className="mx-auto flex max-w-6xl items-center gap-2 px-6 py-3 text-sm text-ink-2">
           <Link href="/" aria-label="홈" className="hover:text-ink">
             홈
           </Link>
