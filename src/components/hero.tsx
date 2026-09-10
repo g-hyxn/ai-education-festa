@@ -1,82 +1,54 @@
-const FLOATERS = [
-  {
-    side: "left" as const,
-    tag: "학생·학부모",
-    title: "사전등록",
-    period: "2026.10.19.(월) 10:00 – 10.28.(수)",
-  },
-  {
-    side: "right" as const,
-    tag: "교원",
-    title: "사전등록",
-    period: "2026.10.19.(월) 10:00 – 10.28.(수)",
-  },
-];
+import Link from "next/link";
+import { StatCards } from "@/components/stat-cards";
+import { EVENT_NAME, EVENT_TAGLINE, ORG_NAME } from "@/components/org-info";
+
+const FEATURE_WORDS = ["보고", "체험하고", "함께 여는 미래"];
 
 export function Hero() {
   return (
-    <section id="top" className="hero-mesh relative overflow-hidden text-white">
-      <div className="hero-grid absolute inset-0" aria-hidden="true" />
+    <section id="top" className="bg-gradient-to-b from-[#eaf2ff] to-white">
+      <div className="mx-auto grid max-w-6xl gap-10 px-6 pt-14 pb-16 lg:grid-cols-[1.1fr_1fr_0.8fr] lg:items-center">
+        <div>
+          <p className="-rotate-1 text-lg font-bold text-sky italic">{EVENT_TAGLINE}</p>
+          <h1 className="mt-3 text-4xl leading-[1.15] font-extrabold tracking-tight text-ink sm:text-5xl">
+            {EVENT_NAME}
+          </h1>
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-ink/60">
+            {ORG_NAME}이 만들어가는 더 나은 내일의 교육
+          </p>
 
-      <div className="relative mx-auto flex max-w-6xl flex-col items-center px-6 pt-24 pb-28 text-center">
-        {FLOATERS.map((f) => (
-          <div
-            key={f.side}
-            className={`float-slow absolute top-[4.5rem] hidden w-64 border border-white/15 bg-white/10 p-5 text-left backdrop-blur-md lg:block ${
-              f.side === "left" ? "left-4" : "right-4"
-            }`}
+          <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium text-ink/70">
+            {FEATURE_WORDS.map((word) => (
+              <li key={word} className="flex items-center gap-1.5">
+                <span className="h-1.5 w-1.5 rounded-full bg-sky" />
+                {word}
+              </li>
+            ))}
+          </ul>
+
+          <p className="mt-5 text-sm font-semibold text-ink/70">
+            2026. 10. 31.(토) – 11. 1.(일) · 장소 추후 공지 · 무료
+          </p>
+
+          <Link
+            href="/#apply"
+            className="mt-5 inline-flex items-center gap-2 rounded-full bg-sky px-7 py-3.5 text-sm font-bold text-white transition-opacity hover:opacity-90"
           >
-            <p className="text-xs font-semibold text-sky-light">{f.tag}</p>
-            <p className="mt-1 text-base font-bold">{f.title}</p>
-            <p className="mt-3 text-xs text-white/60">신청기간</p>
-            <p className="text-sm font-medium text-white/90">{f.period}</p>
-            <a
-              href="#apply"
-              className="mt-4 flex items-center justify-between rounded-full bg-white px-4 py-2 text-sm font-bold text-ink"
-            >
-              사전신청 하기
-              <span aria-hidden="true">›</span>
-            </a>
+            사전등록하기
+            <span aria-hidden="true">→</span>
+          </Link>
+        </div>
+
+        <div className="overflow-hidden rounded-2xl border border-line bg-ink text-white">
+          <div className="flex aspect-video items-center justify-center bg-gradient-to-br from-[#123a8a] to-[#0a2d63]">
+            <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white/90 text-2xl text-sky">
+              ▶
+            </span>
           </div>
-        ))}
-
-        <p className="inline-flex rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-sm font-medium backdrop-blur-sm">
-          학생과 교사가 함께 만드는
-        </p>
-
-        <h1 className="glow-text mt-6 text-7xl leading-none font-black tracking-tight sm:text-8xl">
-          AI 배움
-        </h1>
-        <p className="mt-4 text-2xl font-bold text-white sm:text-3xl">
-          2026 AI미래교육박람회
-        </p>
-
-        <div className="mt-8 flex items-center gap-3">
-          <span className="rounded-full bg-white px-4 py-1.5 text-sm font-bold text-ink">
-            10.31 토
-          </span>
-          <span className="text-white/50">–</span>
-          <span className="rounded-full bg-white px-4 py-1.5 text-sm font-bold text-ink">
-            11.1 일
-          </span>
+          <p className="px-4 py-3 text-xs text-white/70">소개 영상 준비 중</p>
         </div>
-        <p className="mt-4 text-sm text-white/70">장소 추후 공지</p>
 
-        <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-          <a
-            href="#apply"
-            className="flex items-center justify-center gap-2 rounded-full bg-mint px-8 py-3.5 text-sm font-bold text-ink shadow-lg shadow-mint/30 transition-transform hover:scale-105"
-          >
-            행사 참여 등록
-            <span aria-hidden="true">›</span>
-          </a>
-          <a
-            href="#schedule"
-            className="flex items-center justify-center gap-2 rounded-full border border-white/30 px-8 py-3.5 text-sm font-bold text-white/90 transition-colors hover:bg-white/10"
-          >
-            전체 타임라인 보기
-          </a>
-        </div>
+        <StatCards />
       </div>
     </section>
   );

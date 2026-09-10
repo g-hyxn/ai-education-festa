@@ -1,89 +1,83 @@
-function IconOpenBook({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
-      <path
-        d="M12 6.5c-1.6-1.2-4-1.7-6.5-1.5v11.5c2.5-.2 4.9.3 6.5 1.5M12 6.5c1.6-1.2 4-1.7 6.5-1.5v11.5c-2.5-.2-4.9.3-6.5 1.5M12 6.5v11.5"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinejoin="round"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
+import Link from "next/link";
 
-function IconMortarboard({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
-      <path
-        d="M12 5.5L2.5 10 12 14.5 21.5 10 12 5.5z"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinejoin="round"
-      />
-      <path d="M6 12v4.5c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5V12" stroke="currentColor" strokeWidth="1.6" />
-      <path d="M21 10.5v5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-function IconCalendar({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
-      <rect x="3.5" y="5.5" width="17" height="15" rx="2" stroke="currentColor" strokeWidth="1.6" />
-      <path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-      <path d="M8 14h2M14 14h2M8 17h2M14 17h2" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-const LINKS = [
+const CARDS = [
   {
-    Icon: IconOpenBook,
-    accent: "bg-teal",
-    title: "학생·학부모 사전신청",
-    detail: "체험 부스, 골든벨, 오디세이 투어",
-    href: "#apply",
+    tag: "전체",
+    icon: "👥",
+    accent: "from-violet to-[#7c4fe0]",
+    headline: "누구나 참여할 수 있는 특별한 프로그램",
+    items: [
+      {
+        name: "특별 강연",
+        detail: "AI가 바꾸는 우리의 일상, 미래를 만나는 시간",
+      },
+    ],
   },
   {
-    Icon: IconMortarboard,
-    accent: "bg-amber",
-    title: "교원 사전신청",
-    detail: "연수, 부스 안내, 특강",
-    href: "#apply",
+    tag: "학생",
+    icon: "🎓",
+    accent: "from-sky to-sky-deep",
+    headline: "AI·SW로 꿈을 키우는 미래의 주인공",
+    items: [
+      { name: "AI·SW 골든벨", detail: "도전하고, 배우고, 성장하는 AI·SW 퀴즈 대회" },
+      { name: "오디세이 투어", detail: "보고, 체험하고, 상상하는 AI·SW 체험 투어" },
+    ],
   },
   {
-    Icon: IconCalendar,
-    accent: "bg-sky-deep",
-    title: "전체 프로그램 일정",
-    detail: "개막식부터 폐막식까지 한눈에",
-    href: "#schedule",
+    tag: "교사",
+    icon: "🧑‍🏫",
+    accent: "from-teal to-[#0c7f76]",
+    headline: "함께 만들어가는 더 나은 미래교육",
+    items: [{ name: "교사 연수", detail: "AI 시대, 교사의 성장을 지원하는 전문 연수" }],
   },
 ];
 
 export function QuickLinks() {
   return (
-    <section className="bg-paper">
-      <div className="mx-auto grid max-w-6xl gap-5 px-6 py-14 sm:grid-cols-3">
-        {LINKS.map((link) => (
-          <a
-            key={link.title}
-            href={link.href}
-            className={`group flex flex-col justify-between rounded-3xl ${link.accent} p-7 text-white shadow-sm transition-transform hover:-translate-y-1`}
-          >
-            <div>
-              <link.Icon className="h-9 w-9" />
-              <p className="mt-4 text-lg font-bold">{link.title}</p>
-              <p className="mt-1 text-sm text-white/85">{link.detail}</p>
+    <section className="bg-paper py-20">
+      <div className="mx-auto max-w-6xl px-6">
+        <p className="border-l-2 border-sky pl-3 text-sm font-bold text-sky">
+          지금, 미래를 만나보세요!
+        </p>
+        <h2 className="mt-3 text-2xl font-bold text-ink sm:text-3xl">
+          빠른 신청 바로가기
+        </h2>
+        <p className="mt-3 max-w-xl text-sm leading-relaxed text-ink/60">
+          학생, 교사, 지역사회가 함께 만드는 특별한 경험에 지금 참여하세요.
+        </p>
+
+        <div className="mt-10 grid gap-6 sm:grid-cols-3">
+          {CARDS.map((card) => (
+            <div key={card.tag} className="overflow-hidden rounded-2xl border border-line bg-white">
+              <div className={`flex h-28 items-center justify-center bg-gradient-to-br ${card.accent} text-4xl text-white`}>
+                {card.icon}
+              </div>
+              <div className="p-6">
+                <p className="text-xs font-bold text-ink/40">{card.tag}</p>
+                <p className="mt-1 text-sm font-semibold text-ink">{card.headline}</p>
+
+                <ul className="mt-5 divide-y divide-line border-t border-line">
+                  {card.items.map((item) => (
+                    <li key={item.name} className="py-4">
+                      <Link href="/#apply" className="group flex items-start justify-between gap-3">
+                        <span>
+                          <span className="block text-sm font-bold text-ink">{item.name}</span>
+                          <span className="mt-0.5 block text-xs text-ink/55">{item.detail}</span>
+                        </span>
+                        <span
+                          aria-hidden="true"
+                          className="mt-0.5 shrink-0 text-ink/30 transition-colors group-hover:text-sky"
+                        >
+                          →
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-            <span className="mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-white/20 py-1.5 pr-1.5 pl-4 text-sm font-semibold">
-              바로가기
-              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white text-xs text-ink transition-transform group-hover:translate-x-0.5">
-                ›
-              </span>
-            </span>
-          </a>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

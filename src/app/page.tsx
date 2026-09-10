@@ -1,5 +1,6 @@
 import { ApplySection } from "@/components/apply-section";
 import { AudienceTracks } from "@/components/audience-tracks";
+import { BottomBanner } from "@/components/bottom-banner";
 import { Hero } from "@/components/hero";
 import { QuickLinks } from "@/components/quick-links";
 import { Schedule } from "@/components/schedule";
@@ -16,6 +17,7 @@ export default function Home() {
         <AudienceTracks />
         <Schedule />
         <ApplySection />
+        <BottomBanner />
       </main>
       <SiteFooter />
     </>
