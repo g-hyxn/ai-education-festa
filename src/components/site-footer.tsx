@@ -3,7 +3,6 @@ const NOTICE_LINKS = ["공지사항", "FAQ", "주차 안내"];
 export function SiteFooter() {
   return (
     <footer id="notice" className="scroll-mt-20 bg-ink text-white/70">
-      <div className="h-1 bg-gradient-to-r from-sky-2 via-teal to-gold" />
       <div className="mx-auto max-w-6xl px-6 py-16">
         <h2 className="text-lg font-bold text-white">알림마당</h2>
         <ul className="mt-6 flex flex-wrap gap-x-8 gap-y-3">
