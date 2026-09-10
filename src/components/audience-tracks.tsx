@@ -1,7 +1,13 @@
 function StudentMark() {
   return (
     <svg viewBox="0 0 120 120" className="h-16 w-16" aria-hidden="true">
-      <rect x="18" y="34" width="84" height="66" rx="18" fill="#2563eb" />
+      <defs>
+        <linearGradient id="student-g" x1="0" y1="0" x2="120" y2="120">
+          <stop offset="0%" stopColor="#7cb0fb" />
+          <stop offset="100%" stopColor="#1d4fd1" />
+        </linearGradient>
+      </defs>
+      <rect x="18" y="34" width="84" height="66" rx="18" fill="url(#student-g)" />
       <path
         d="M40 34c0-13 9-22 20-22s20 9 20 22"
         stroke="#ffffff"
@@ -26,7 +32,13 @@ function StudentMark() {
 function TeacherMark() {
   return (
     <svg viewBox="0 0 120 120" className="h-16 w-16" aria-hidden="true">
-      <rect x="16" y="24" width="88" height="60" rx="10" fill="#0f9e93" />
+      <defs>
+        <linearGradient id="teacher-g" x1="0" y1="0" x2="120" y2="120">
+          <stop offset="0%" stopColor="#5fd6c8" />
+          <stop offset="100%" stopColor="#0f9e93" />
+        </linearGradient>
+      </defs>
+      <rect x="16" y="24" width="88" height="60" rx="10" fill="url(#teacher-g)" />
       <path
         d="M30 62l16-14 14 10 22-22"
         stroke="#ffffff"
@@ -50,9 +62,8 @@ const TRACKS = [
     title: "학생마당",
     lead: "체험하고, 겨루고, 둘러보는 하루",
     mark: <StudentMark />,
-    panel: "bg-[#dbe9ff]",
-    button: "bg-sky",
-    buttonHover: "hover:bg-[#1a52c4]",
+    panel: "from-[#eaf2ff] to-[#dbe9ff]",
+    button: "from-sky-2 to-sky",
     items: [
       {
         name: "체험 부스",
@@ -74,9 +85,8 @@ const TRACKS = [
     title: "교사마당",
     lead: "현장에 바로 쓰는 미래교육 연수",
     mark: <TeacherMark />,
-    panel: "bg-[#d7f1ec]",
-    button: "bg-teal",
-    buttonHover: "hover:bg-[#0c7f76]",
+    panel: "from-[#e7f8f5] to-[#d7f1ec]",
+    button: "from-[#5fd6c8] to-teal",
     items: [
       { name: "부스 안내", detail: "체험마당·에듀테크 부스 교사 대상 안내" },
       { name: "교사 연수", detail: "세부 일정은 추후 안내 예정" },
@@ -102,9 +112,9 @@ export function AudienceTracks() {
             <div
               key={track.id}
               id={track.id}
-              className="scroll-mt-20 overflow-hidden rounded-3xl bg-white shadow-md"
+              className="scroll-mt-20 overflow-hidden rounded-3xl bg-white shadow-[0_20px_45px_-24px_rgba(11,29,58,0.35)]"
             >
-              <div className={`relative flex h-36 items-center justify-center ${track.panel}`}>
+              <div className={`relative flex h-36 items-center justify-center bg-gradient-to-br ${track.panel}`}>
                 {track.mark}
                 <span className="absolute top-5 left-6 text-xs font-bold text-ink/50">
                   {track.tag}
@@ -128,7 +138,7 @@ export function AudienceTracks() {
 
                 <a
                   href="#apply"
-                  className={`mt-7 inline-flex items-center gap-3 rounded-full ${track.button} ${track.buttonHover} py-2 pr-2 pl-5 text-sm font-bold text-white transition-colors`}
+                  className={`mt-7 inline-flex items-center gap-3 rounded-full bg-gradient-to-r ${track.button} py-2 pr-2 pl-5 text-sm font-bold text-white shadow-sm transition-transform hover:-translate-y-0.5`}
                 >
                   사전신청 안내
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/90 text-sm text-ink">

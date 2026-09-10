@@ -59,9 +59,9 @@ export function Schedule() {
           {DAYS.map((day) => (
             <div
               key={day.date}
-              className="overflow-hidden rounded-2xl border border-line bg-white"
+              className="overflow-hidden rounded-2xl bg-white shadow-[0_16px_40px_-24px_rgba(11,29,58,0.35)]"
             >
-              <p className="bg-ink px-6 py-4 text-sm font-bold text-white">
+              <p className="bg-gradient-to-r from-sky to-[#173f9e] px-6 py-4 text-sm font-bold text-white">
                 {day.date}
               </p>
               <ol>
@@ -86,10 +86,10 @@ export function Schedule() {
         <h3 className="mt-20 text-lg font-bold text-ink">
           프로그램 운영 현황
         </h3>
-        <div className="mt-6 overflow-x-auto rounded-2xl border border-line bg-white">
+        <div className="mt-6 overflow-x-auto rounded-2xl bg-white shadow-[0_16px_40px_-24px_rgba(11,29,58,0.35)]">
           <table className="w-full min-w-[560px] border-collapse text-left text-sm">
             <thead>
-              <tr className="bg-ink text-white">
+              <tr className="bg-gradient-to-r from-sky to-[#173f9e] text-white">
                 <th className="px-6 py-4 font-bold">프로그램</th>
                 <th className="px-6 py-4 font-bold">대상</th>
                 <th className="px-6 py-4 font-bold">일정</th>

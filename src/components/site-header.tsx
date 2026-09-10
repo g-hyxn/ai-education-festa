@@ -58,7 +58,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-line bg-white/90 backdrop-blur-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3.5">
         <a href="#top" className="flex items-center gap-2 text-base font-extrabold tracking-tight text-ink">
-          <span className="h-2.5 w-2.5 rounded-full bg-sky" />
+          <span className="h-2.5 w-2.5 rounded-full bg-gradient-to-br from-sky-2 to-sky" />
           AI미래교육박람회
         </a>
         <nav className="hidden md:flex">
@@ -72,7 +72,7 @@ export function SiteHeader() {
               </a>
 
               <div className="invisible absolute top-full left-1/2 w-56 -translate-x-1/2 pt-3 opacity-0 transition-opacity duration-150 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
-                <ul className="rounded-xl border border-line bg-white py-2 shadow-lg">
+                <ul className="rounded-xl border border-line bg-white py-2 shadow-[0_20px_45px_-20px_rgba(11,29,58,0.35)]">
                   {item.children.map((child) =>
                     child.soon ? (
                       <li
@@ -100,7 +100,7 @@ export function SiteHeader() {
         </nav>
         <a
           href="#apply"
-          className="rounded-full bg-sky px-5 py-2 text-sm font-bold text-white transition-colors hover:bg-[#1a52c4]"
+          className="rounded-full bg-gradient-to-r from-sky-2 to-sky px-5 py-2 text-sm font-bold text-white shadow-sm transition-transform hover:-translate-y-0.5"
         >
           사전신청
         </a>
