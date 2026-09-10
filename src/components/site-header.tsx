@@ -1,5 +1,5 @@
+import Image from "next/image";
 import Link from "next/link";
-import { EVENT_NAME, ORG_NAME } from "@/components/org-info";
 
 type NavChild = { label: string; href: string; soon?: boolean };
 type NavItem = { number: string; label: string; href: string; children: NavChild[] };
@@ -21,9 +21,9 @@ const NAV_ITEMS: NavItem[] = [
     label: "학생마당 (AI·SW교육)",
     href: "/#students",
     children: [
-      { label: "체험 부스 안내", href: "/#students" },
-      { label: "AI·SW 골든벨", href: "/#students" },
-      { label: "오디세이 투어", href: "/#students" },
+      { label: "체험 부스 안내", href: "/students/booth" },
+      { label: "AI·SW 골든벨", href: "/students/goldenbell" },
+      { label: "오디세이 투어", href: "/students/odyssey" },
     ],
   },
   {
@@ -31,9 +31,9 @@ const NAV_ITEMS: NavItem[] = [
     label: "교사마당 (미래교육)",
     href: "/#teachers",
     children: [
-      { label: "부스 안내", href: "/#teachers" },
-      { label: "교사 연수", href: "/#teachers" },
-      { label: "AI전남광주 미래교육", href: "/#teachers" },
+      { label: "부스 안내", href: "/teachers/booth" },
+      { label: "교사 연수", href: "/teachers/training" },
+      { label: "AI전남광주 미래교육", href: "/teachers/future-edu" },
     ],
   },
   {
@@ -65,9 +65,8 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-white/90 backdrop-blur-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
-        <Link href="/" className="leading-tight">
-          <span className="block text-xs font-medium text-ink/50">{ORG_NAME}</span>
-          <span className="block text-lg font-extrabold tracking-tight text-sky">{EVENT_NAME}</span>
+        <Link href="/" className="shrink-0">
+          <Image src="/logo.png" alt="AI미래교육박람회" width={643} height={154} className="h-9 w-auto" priority />
         </Link>
         <nav className="hidden md:flex">
           {NAV_ITEMS.map((item) => (

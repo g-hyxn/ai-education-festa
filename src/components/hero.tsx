@@ -2,8 +2,6 @@ import Link from "next/link";
 import { StatCards } from "@/components/stat-cards";
 import { EVENT_NAME, EVENT_TAGLINE, ORG_NAME } from "@/components/org-info";
 
-const FEATURE_WORDS = ["보고", "체험하고", "함께 여는 미래"];
-
 export function Hero() {
   return (
     <section id="top" className="bg-sky-subtle">
@@ -17,22 +15,9 @@ export function Hero() {
             {ORG_NAME}이 만들어가는 더 나은 내일의 교육
           </p>
 
-          <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium text-ink-2">
-            {FEATURE_WORDS.map((word) => (
-              <li key={word} className="flex items-center gap-1.5">
-                <span className="h-1.5 w-1.5 rounded-full bg-sky" />
-                {word}
-              </li>
-            ))}
-          </ul>
-
-          <p className="mt-5 text-sm font-semibold text-ink-2">
-            2026. 10. 31.(토) – 11. 1.(일) · 장소 추후 공지 · 무료
-          </p>
-
           <Link
             href="/#apply"
-            className="mt-5 inline-flex items-center gap-2 rounded-md bg-sky px-7 py-3.5 text-sm font-bold text-white transition-colors hover:bg-sky-2"
+            className="mt-6 inline-flex items-center gap-2 rounded-md bg-sky px-7 py-3.5 text-sm font-bold text-white transition-colors hover:bg-sky-2"
           >
             사전등록하기
             <span aria-hidden="true">→</span>
