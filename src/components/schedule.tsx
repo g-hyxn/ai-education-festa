@@ -57,15 +57,18 @@ export function Schedule() {
 
         <div className="mt-12 grid gap-8 md:grid-cols-2">
           {DAYS.map((day) => (
-            <div key={day.date} className="overflow-hidden border border-line">
-              <p className="bg-sky px-5 py-3 text-sm font-bold text-white">
+            <div
+              key={day.date}
+              className="overflow-hidden rounded-2xl bg-white shadow-[0_16px_40px_-24px_rgba(11,29,58,0.35)]"
+            >
+              <p className="bg-gradient-to-r from-sky to-[#173f9e] px-6 py-4 text-sm font-bold text-white">
                 {day.date}
               </p>
               <ol>
-                {day.sessions.map((session) => (
+                {day.sessions.map((session, i) => (
                   <li
                     key={session.time + session.title}
-                    className="flex gap-6 border-b border-line bg-white px-5 py-4 last:border-b-0 odd:bg-paper/60"
+                    className={`flex gap-6 px-6 py-4 ${i % 2 === 1 ? "bg-paper/70" : "bg-white"}`}
                   >
                     <span className="w-32 shrink-0 text-sm text-ink/50">
                       {session.time}
@@ -83,28 +86,28 @@ export function Schedule() {
         <h3 className="mt-20 text-lg font-bold text-ink">
           프로그램 운영 현황
         </h3>
-        <div className="mt-6 overflow-x-auto border border-line">
+        <div className="mt-6 overflow-x-auto rounded-2xl bg-white shadow-[0_16px_40px_-24px_rgba(11,29,58,0.35)]">
           <table className="w-full min-w-[560px] border-collapse text-left text-sm">
             <thead>
-              <tr className="bg-sky text-white">
-                <th className="px-5 py-3 font-bold">프로그램</th>
-                <th className="px-5 py-3 font-bold">대상</th>
-                <th className="px-5 py-3 font-bold">일정</th>
-                <th className="px-5 py-3 font-bold">인원</th>
+              <tr className="bg-gradient-to-r from-sky to-[#173f9e] text-white">
+                <th className="px-6 py-4 font-bold">프로그램</th>
+                <th className="px-6 py-4 font-bold">대상</th>
+                <th className="px-6 py-4 font-bold">일정</th>
+                <th className="px-6 py-4 font-bold">인원</th>
               </tr>
             </thead>
             <tbody>
               {PROGRAMS.map((program, i) => (
                 <tr
                   key={program.name}
-                  className={`border-t border-line ${i % 2 === 1 ? "bg-paper/60" : "bg-white"}`}
+                  className={`transition-colors hover:bg-[#eaf2ff] ${i % 2 === 1 ? "bg-paper/70" : "bg-white"}`}
                 >
-                  <td className="px-5 py-3 font-semibold text-ink">
+                  <td className="px-6 py-4 font-semibold text-ink">
                     {program.name}
                   </td>
-                  <td className="px-5 py-3 text-ink/70">{program.target}</td>
-                  <td className="px-5 py-3 text-ink/70">{program.when}</td>
-                  <td className="px-5 py-3 text-ink/70">{program.capacity}</td>
+                  <td className="px-6 py-4 text-ink/70">{program.target}</td>
+                  <td className="px-6 py-4 text-ink/70">{program.when}</td>
+                  <td className="px-6 py-4 text-ink/70">{program.capacity}</td>
                 </tr>
               ))}
             </tbody>
