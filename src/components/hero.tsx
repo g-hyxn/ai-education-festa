@@ -1,11 +1,10 @@
 import Link from "next/link";
-import { StatCards } from "@/components/stat-cards";
 import { EVENT_NAME, EVENT_TAGLINE, ORG_NAME } from "@/components/org-info";
 
 export function Hero() {
   return (
     <section id="top" className="bg-sky-subtle">
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 pt-14 pb-16 lg:grid-cols-[1.1fr_1fr_0.8fr] lg:items-center">
+      <div className="mx-auto grid max-w-6xl gap-10 px-6 pt-14 pb-16 lg:grid-cols-[1.1fr_1fr] lg:items-center">
         <div>
           <p className="text-base font-bold text-sky-2">{EVENT_TAGLINE}</p>
           <h1 className="mt-3 text-4xl leading-[1.15] font-extrabold tracking-tight text-ink sm:text-5xl">
@@ -32,8 +31,6 @@ export function Hero() {
           </div>
           <p className="border-t border-line px-4 py-3 text-xs text-ink-2">소개 영상 준비 중</p>
         </div>
-
-        <StatCards />
       </div>
     </section>
   );

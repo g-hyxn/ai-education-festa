@@ -57,6 +57,7 @@ const NAV_ITEMS: NavItem[] = [
       { label: "공지사항", href: "/#notice" },
       { label: "FAQ", href: "/#notice" },
       { label: "주차 안내", href: "/#notice" },
+      { label: "실시간 현황", href: "/status" },
     ],
   },
 ];

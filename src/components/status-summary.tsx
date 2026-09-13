@@ -36,60 +36,60 @@ function IconClipboard({ className }: { className?: string }) {
   );
 }
 
-const STATS = [
+const SUMMARY = [
   {
     icon: IconPeople,
     label: "행사장 혼잡도",
-    badge: "실시간",
+    badge: "실시간 (예시)",
     badgeTone: "bg-success/10 text-success",
-    value: "보통 65%",
-    valueTone: "text-success",
-    fill: 65,
-    barTone: "bg-success",
-    detail: "여유롭게 관람하실 수 있습니다.",
+    value: "보통 54%",
+    fill: 54,
+    barTone: "bg-sky",
+    detail: "구역별 혼잡도는 아래에서 확인하세요.",
   },
   {
     icon: IconCar,
     label: "주차 안내",
-    badge: "여유",
-    badgeTone: "bg-info/10 text-info",
-    value: "잔여 320대 / 500대",
-    valueTone: "text-info",
-    fill: 64,
-    barTone: "bg-info",
-    detail: "제1주차장 180대 · 제2주차장 140대",
+    badge: "예시 데이터",
+    badgeTone: "bg-line text-ink-2",
+    value: "잔여 68대 / 500대",
+    fill: 14,
+    barTone: "bg-sky",
+    detail: "주차 공간이 한정되어 대중교통 이용을 권장합니다.",
   },
   {
     icon: IconClipboard,
     label: "사전등록 현황",
-    badge: "누적",
-    badgeTone: "bg-secondary/10 text-secondary",
-    value: "3,482명",
-    valueTone: "text-secondary",
-    fill: 70,
-    barTone: "bg-secondary",
-    detail: "목표 5,000명 대비 70%",
+    badge: "실시간 (예시)",
+    badgeTone: "bg-success/10 text-success",
+    value: "680명",
+    fill: 68,
+    barTone: "bg-sky",
+    detail: "목표 1,000명 대비 68%",
   },
 ];
 
-export function StatCards() {
+export function StatusSummary() {
   return (
-    <div className="flex flex-col gap-3">
-      <p className="text-xs text-ink-2">예시 화면 · 실제 데이터는 운영 중 실시간으로 반영됩니다</p>
-      {STATS.map((stat) => (
-        <div key={stat.label} className="rounded-md border border-line bg-white p-4">
+    <div className="grid gap-4 sm:grid-cols-3">
+      {SUMMARY.map((stat) => (
+        <div key={stat.label} className="rounded-md border border-line bg-white p-5">
           <div className="flex items-center gap-2">
-            <stat.icon className="h-5 w-5 text-ink-2" />
-            <p className="text-sm font-semibold text-ink-2">{stat.label}</p>
-            <span className={`ml-auto rounded-sm px-2 py-0.5 text-xs font-bold ${stat.badgeTone}`}>
+            <span className="flex h-8 w-8 items-center justify-center rounded-md bg-sky text-white">
+              <stat.icon className="h-4.5 w-4.5" />
+            </span>
+            <p className="text-sm font-bold text-ink">{stat.label}</p>
+            <span
+              className={`ml-auto rounded px-1.5 py-0.5 text-[11px] font-semibold ${stat.badgeTone}`}
+            >
               {stat.badge}
             </span>
           </div>
-          <p className={`mt-2 text-lg font-extrabold ${stat.valueTone}`}>{stat.value}</p>
-          <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-line">
+          <p className="mt-4 text-2xl font-extrabold text-ink">{stat.value}</p>
+          <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-line">
             <div className={`h-full rounded-full ${stat.barTone}`} style={{ width: `${stat.fill}%` }} />
           </div>
-          <p className="mt-1.5 text-xs text-ink-2">{stat.detail}</p>
+          <p className="mt-3 text-xs text-ink-2">{stat.detail}</p>
         </div>
       ))}
     </div>
